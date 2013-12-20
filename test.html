@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <title>New Web Project</title>
+        <style>
+        	a{    			
+				-webkit-touch-callout:none;
+        	}
+        </style>
+    </head>
+    <body>
+        <h1>只是测试的，真的</h1>
+        <div id="outer">
+        	<h3>小标题小标题小标题小标题小标题</h3>
+        	<hr />
+        	<br />
+        	<div>
+        		<span action-type="test" action-data="test=ttt">点这里点这里点这里点这里点这里点这里</span>
+        		<a href="http://www.baidu.com" id="atest">点这里点这里点这里点这里点这里点这里</a>
+        	</div>
+        	<br />
+        	<hr />
+        	<h4>结束了结束了结束了结束了结束了结束了</h4>
+        	<h3>这里是输出这里是输出这里是输出这里是输出这里是输出这里是输出</h3>
+        	<div>
+        		<div id="output" style="width: 500px;">这里才是真的输出</div>
+        		<img id="img" src="heibaise.png"/>
+        	</div>
+        	<h4>又结束了又结束了又结束了又结束了又结束了又结束了又结束了</h4>
+        	<div style="height:1000px;background-color:blue;">这个div很长这个div很长这个div很长这个div很长</div>
+        	<div>没了</div>
+        </div>
+        <script src="gesture.js"></script>
+        <script>
+        	// var outer = document.getElementById('outer');
+        	// var atest = document.getElementById('atest');
+        	// var test = {test:'123'};
+        	// window.testgesture.custEvent.define(test,['click','csxt']);
+        	// window.testgesture.custEvent.add(test,'click', function(){console.log(arguments);});
+        	// var test1 = {test:'12322331'};
+        	// window.testgesture.custEvent.define(test1,['click','csxt']);
+        	// window.testgesture.custEvent.add(test1,'click', function(){console.log(arguments);});
+        	// window.testgesture.custEvent.add(test1,'csxt', function(){console.log(122333);});
+        	// var deleg = window.testgesture.delegatedEvent(outer);
+        	// deleg.add('test', 'click', function(){console.log(123);window.testgesture.custEvent.fire(test,'click', ['tesst']);window.testgesture.custEvent.fire(test,'csxt', ['tesst']);});
+        	var output = document.getElementById('output');
+        	var img = document.getElementById('img');
+        	var str = output.innerHTML;
+        	window.testgesture.touchStart(function(x,data){str = str + '\n11\n';output.innerHTML = str;});
+        	window.testgesture.touchMove(function(x,data){str = str + '\n22\n';output.innerHTML = str;});
+        	window.testgesture.touchEnd(function(x,data){str = str + '\n33\n';output.innerHTML = str;});
+        	window.testgesture.touchLong(function(x,data){str = str + '\n44\n';output.innerHTML = str;});
+        	window.testgesture.singleTap(function(x,data){str = str + '\n66\n';output.innerHTML = str;});
+        	window.testgesture.doubleTap(function(x,data){str = str + '\n55\n';output.innerHTML = str;});
+        	//alert(window.hasOwnProperty('ongesturestart'));
+        </script>
+    </body>
+</html>
+
